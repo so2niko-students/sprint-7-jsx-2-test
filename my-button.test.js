@@ -3,7 +3,7 @@ import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import Button from '../components/button/button.js';
+import MyButton from '../components/my-button/my-button.js';
 
 let container = null;
 
@@ -17,12 +17,12 @@ afterEach(() => {
   container = null;
 });
 
-it('Renders Button without crashing', () => {
+it('Renders MyButton without crashing', () => {
     container = document.createElement('div');
-    ReactDOM.render(<Button />, container);
+    ReactDOM.render(<MyButton />, container);
 });
 
-it('Renders Button correctly', () => {
-  const { getByTestId } = render(<Button />);
+it('Renders MyButton correctly', () => {
+  const { getByTestId } = render(<MyButton />);
   expect(getByTestId('element-button')).toHaveTextContent('Add to account');
 });
